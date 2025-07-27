@@ -43,6 +43,9 @@ local players = game:GetService('Players'):GetPlayers()
 
 for _, plrs in ipairs(players) do
 	addPlr(plrs)
+	runservice.Heartbeat:Connect(function()
+    addPlr(plr)
+  end)
 end
 
 game.Players.PlayerAdded:Connect(function(plr)
