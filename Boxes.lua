@@ -2,6 +2,7 @@ local plr = game.Players.LocalPlayer
 local box = Instance.new('BillboardGui')
 local frame = Instance.new('Frame')
 local Teams = game:GetService('Teams'):GetTeams()
+local runservice = game:GetService('RunService')
 
 box.Name = 'Name'
 frame.Name = 'Name'
@@ -46,4 +47,7 @@ end
 
 game.Players.PlayerAdded:Connect(function(plr)
 	addPlr(plr)
+  runservice.Heartbeat:Connect(function()
+    addPlr(plr)
+  end)
 end)
