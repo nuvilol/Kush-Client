@@ -20,14 +20,13 @@ local function setup(player)
 	if player == plr then return end
 	local HeadESP = box:Clone()
 	local char = player.Character or player.CharacterAdded:Wait()
-
+    
 	local Head = char:WaitForChild('Head')
 	if #Teams > 0 then
 		if player.Team == plr.Team then return end
-	else
-		if Head:FindFirstChild('Name') then return end
-		if Head then HeadESP.Parent = Head else return end
-	end
+    end
+    if Head:FindFirstChild('Name') then return end
+	if Head then HeadESP.Parent = Head else return end
 end
 
 local function addPlr(player)
