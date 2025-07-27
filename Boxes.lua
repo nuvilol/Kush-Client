@@ -24,10 +24,9 @@ local function setup(player)
 	local humRP = char:WaitForChild('HumanoidRootPart')
 	if #Teams > 0 then
 		if player.Team == plr.Team then return end
-	else
-		if humRP:FindFirstChild('Name') then return end
-		if humRP then boxESP.Parent = humRP else return end
 	end
+  if humRP:FindFirstChild('Name') then return end
+	if humRP then boxESP.Parent = humRP else return end
 end
 
 local function addPlr(player)
